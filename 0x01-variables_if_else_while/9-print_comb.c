@@ -14,12 +14,12 @@ int main(void)
 	{
 		putchar(alp);
 		putchar(44);
+		putchar(32);
 	}
 	for (alp = 57 ; alp <= 57 ; alp++)
 	{
 		putchar(alp);
 	}
-	putchar('\n');
 
 	return (0);
 }
