@@ -8,9 +8,10 @@
  */
 int main(void)
 {
-	char ch = 'A';
+	char ch;
 
-	putchar(tolower(ch));
-
-	return (0);
+	for (ch = 'A' ; ch <= 'Z' ; ch++)
+	{
+		putchar(tolower(ch));
+	}
 }
