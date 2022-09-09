@@ -14,4 +14,5 @@ int main(void)
 	{
 		putchar(tolower(ch));
 	}
+	return (0);
 }
