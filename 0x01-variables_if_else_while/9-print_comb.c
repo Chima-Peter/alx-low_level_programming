@@ -10,16 +10,17 @@ int main(void)
 {
 	int alp;
 
-	for (alp = 48 ; alp <= 56 ; alp++)
+	for (alp = 48 ; alp <= 57 ; alp++)
 	{
 		putchar(alp);
-		putchar(44);
-		putchar(32);
-	}
-	for (alp = 57 ; alp <= 57 ; alp++)
-	{
-		putchar(alp);
+		if (alp != 57)
+		{
+			putchar(44);
+			putchar(32);
+		}
 	}
 
+	putchar('\n');
+
 	return (0);
-}
+}	
