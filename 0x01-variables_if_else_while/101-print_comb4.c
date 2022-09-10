@@ -9,19 +9,24 @@ int main(void)
 {
 	int ch;
 	int cd;
+	int cm;
 
 	for (ch = 48; ch <= 57; ch++)
 	{
 		for (cd = 48; cd <= 57; cd++)
 		{
-			if (cd != ch && ch <= cd)
+			for (cm = 48; cm <= 57; cm++)
 			{
-				putchar(ch);
-				putchar(cd);
-				if (ch != 56 || cd != 57)
+				if (ch != cd && ch != cm && cd != cm && ch < cd && ch < cm && cd < cm)
 				{
-					putchar(44);
-					putchar(32);
+					putchar(ch);
+					putchar(cd);
+					putchar(cm);
+					if (ch != 55 || cd != 56 || cm != 57)
+					{
+						putchar(44);
+						putchar(32);
+					}
 				}
 			}
 		}
@@ -30,3 +35,4 @@ int main(void)
 
 	return (0);
 }
+
