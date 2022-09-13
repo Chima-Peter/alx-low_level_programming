@@ -10,7 +10,7 @@
 	{
 		char i;
 
-		put(i='A'; i<='Z'; i++)
+		for(i='A'; i<='Z'; i++)
 		{
 			_putchar(i);
 			_putchar('\n');
