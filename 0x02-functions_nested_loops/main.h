@@ -1,1 +1,1 @@
-int printf( const char *restrict format, ... );
+int _putchar(char c);
