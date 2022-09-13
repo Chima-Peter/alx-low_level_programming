@@ -12,7 +12,7 @@ int main(void)
 	{
 		char i;
 
-		while(i='A'; i<='Z'; i++)
+		put(i='A'; i<='Z'; i++)
 		{
 			_putchar(i);
 			_putchar('\n');
