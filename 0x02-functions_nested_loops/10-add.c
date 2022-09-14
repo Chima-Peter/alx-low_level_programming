@@ -11,9 +11,9 @@
  */
 int add(int n, int i)
 {
-	int ch = n + i;
+	int ch;
+       
+	ch = n + i;
 
-	_putchar(ch);
-	_putchar('\n');
-	return (0);
+	return (ch);
 }
