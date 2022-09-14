@@ -13,6 +13,7 @@ int add(int n, int i)
 {
 	int ch = n + i;
 
-	printf("%d\n", ch);
+	_putchar(ch);
+	_putchar('\n');
 	return (0);
 }
