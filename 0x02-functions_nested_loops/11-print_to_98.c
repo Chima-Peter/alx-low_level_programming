@@ -30,10 +30,10 @@ void print_to_98(int n)
 	{
 	for (a = n; a >= 98; a--)
 	{
-		if (i != 98)
+		if (a != 98)
 		{
 			printf("%d, ", a);
-		} else if (i == 98)
+		} else if (a == 98)
 		{
 			printf("%d\n", a);
 		}
