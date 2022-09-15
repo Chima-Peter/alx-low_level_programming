@@ -13,11 +13,11 @@ int main(void)
 
 	for (abc = 1; abc <= 100; abc++)
 	{
-		if (abc % 3 == 0 && abc != 0)
+		if (abc % 3 == 0 && abc % 5 != 0)
 		{
 			printf(" Fizz");
 		}
-		else if (abc % 5 == 0 && abc != 0)
+		else if (abc % 5 == 0 && abc % 3 != 0)
 		{
 			printf(" Buzz");
 		}
