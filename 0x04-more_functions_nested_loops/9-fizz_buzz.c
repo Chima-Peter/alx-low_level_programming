@@ -10,25 +10,25 @@
  */
 int main(void)
 {
-	int abc;
+	int i;
 
-	for (abc = 1; abc <= 100; abc++)
+	for (i = 1; i <= 100; i++)
 	{
-		if (abc % 3 == 0 && abc % 5 != 0)
+		if (i % 3 == 0 && i % 5 != 0)
 		{
 			printf(" Fizz");
-		} else if (abc % 5 == 0 && abc % 3 != 0)
+		} else if (i % 5 == 0 && i % 3 != 0)
 		{
 			printf(" Buzz");
-		} else if (abc % 3 == 0 && abc % 5 == 0)
+		} else if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf(" FizzBuzz ");
-		} else if (abc == 1)
+			printf(" FizzBuzz");
+		} else if (i == 1)
 		{
-			printf("%d", abc);
+			printf("%d", i);
 		} else
 		{
-			printf(" %d", abc);
+			printf(" %d", i);
 		}
 	}
 	printf("\n");
