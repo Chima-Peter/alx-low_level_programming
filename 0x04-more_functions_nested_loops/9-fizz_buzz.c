@@ -17,12 +17,10 @@ int main(void)
 		if (abc % 3 == 0 && abc % 5 != 0)
 		{
 			printf(" Fizz");
-		}
-		else if (abc % 5 == 0 && abc % 3 != 0)
+		} else if (abc % 5 == 0 && abc % 3 != 0)
 		{
 			printf(" Buzz");
-		}
-		else if (abc % 3 == 0 && abc % 5 == 0)
+		} else if (abc % 3 == 0 && abc % 5 == 0)
 		{
 			printf(" FizzBuzz ");
 		} else if (abc == 1)
@@ -34,5 +32,6 @@ int main(void)
 		}
 	}
 	putchar('\n');
+
 	return (0);
 }
