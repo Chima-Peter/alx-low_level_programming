@@ -15,21 +15,21 @@ int main(void)
 	{
 		if (abc % 3 == 0 && abc != 0)
 		{
-			printf("Fizz ");
-			continue;
+			printf(" Fizz");
 		}
-		if (abc % 5 == 0 && abc != 0)
+		else if (abc % 5 == 0 && abc != 0)
 		{
-			printf("Buzz ");
-			continue;
+			printf(" Buzz");
 		}
-		if (abc % 3 == 0 && abc % 5 == 0)
+		else if (abc % 3 == 0 && abc % 5 == 0)
 		{
-			printf("FizzBuzz ");
-			continue;
-		} else if (abc != 100)
+			printf(" FizzBuzz ");
+		} else if (abc == 1)
 		{
-			printf("%d ", abc);
+			printf("%d", abc);
+		} else
+		{
+			printf(" %d", abc);
 		}
 	}
 	putchar('\n');
