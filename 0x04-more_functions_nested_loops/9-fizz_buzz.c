@@ -31,7 +31,7 @@ int main(void)
 			printf(" %d", abc);
 		}
 	}
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 }
