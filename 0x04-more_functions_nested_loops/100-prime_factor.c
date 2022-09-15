@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 /**
  * main - finds and prints the prime factors of number
@@ -8,31 +7,16 @@
  */
 int main(void)
 {
-	long int n;
-	long int max;
-	long int i;
+	long int num = 612852475143;
+	int count;
 
-	n = 612852475143;
-	max = -1;
-
-	while (n % 2 == 0)
+	for (count = 2; num > 1; count ++)
 	{
-		max = 2;
-		n /= 2;
-	}
-
-	for (i = 3; i <= sqrt(n); i = i + 2)
-	{
-		while (n % 1 == 0)
+		while (num % count == 0)
 		{
-			max = -1;
-			n = n / i;
+			printf("%d\n", count);
+			num = num / count;
 		}
 	}
-
-	if (n > 2)
-		max = n;
-	printf("%ld\n", max);
-
 	return (0);
 }
