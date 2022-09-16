@@ -1,22 +1,19 @@
 #include <stdio.h>
 
 /**
- * main - finds and prints the prime factors of number
+ * main - prints the largest prime factor of 612852475143
  *
- * Return: Alwyas 0 (SUCCESS)
+ * Return: always 0
  */
 int main(void)
 {
-	long int num = 612852475143;
-	int count;
+	unsigned long int i, n = 612852475143;
 
-	for (count = 2; num > 1; count ++)
+	for (i = 3; i < 782849; i = i + 2)
 	{
-		while (num % count == 0)
-		{
-			printf("%d\n", count);
-			num = num / count;
-		}
+		while ((n % i == 0) && (n != i))
+			n = n / i;
 	}
+	printf("%lu\n", n);
 	return (0);
 }
