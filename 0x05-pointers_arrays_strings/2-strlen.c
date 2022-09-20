@@ -3,7 +3,7 @@
 /**
  * _strlen - Write a function that returns the length of a string.
  *
- * @s - The interger.
+ * @s: The interger.
  *
  * Return: Always 0.
  */
