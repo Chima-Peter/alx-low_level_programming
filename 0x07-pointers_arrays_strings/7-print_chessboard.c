@@ -5,8 +5,6 @@
  *
  * @a: Array
  *
- * @8: Number
- *
  */
 void print_chessboard(char (*a)[8])
 {
