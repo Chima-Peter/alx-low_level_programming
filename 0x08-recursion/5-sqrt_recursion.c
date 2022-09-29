@@ -21,6 +21,8 @@ int _sqrt_recursion(int n)
  *
  * @n: Number
  *
+ * @i: Number
+ *
  * Return: The result of the check
  */
 int real_sqrt_check(int n, int i)
