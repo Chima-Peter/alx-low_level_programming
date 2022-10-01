@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - Print6s number of arguments passed into it
@@ -12,14 +13,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
-
+	int i = argc - 1;
 	(void) argv;
-
-	for (i = 0; i < argc; i++)
-	{
-		sum = sum + i;
-	}
-		printf("%d\n", sum);
+		printf("%d\n", i);
 	return (0);
 }

@@ -13,7 +13,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, mul = 1;
+	int i, c, mul;
 
 	if (argc < 3 || argc > 3)
 	{
@@ -22,10 +22,10 @@ int main(int argc, char *argv[])
 	}
 	if (argc == 3)
 	{
-		for (i = 1; i < argc; i++)
-		{
-			mul = mul * atoi(argv[i]);
-		}
+		i = atoi(argv[1]);
+		c = atoi(argv[2]);
+		mul = i * c;
+
 		printf("%d\n", mul);
 	}
 	return (0);
