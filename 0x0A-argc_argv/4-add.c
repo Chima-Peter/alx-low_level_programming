@@ -18,7 +18,12 @@ int main(int argc, char *argv[])
 {
 	int i, add = 0;
 
-	int c = strlen(*argv);
+	int c;
+
+	for (c = argv[argc]; argv[0] == '0'; c--)
+	{
+
+	}
 
 
 	printf("%d\n", c);
@@ -30,12 +35,11 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; 1 < argc; i++)
 		{
-			if (isalpha(atoi(argv[i])) == 0)
+			if (isdigit(atoi(argv[i])) == 0)
 			{
 				printf("Error\n");
 				return (1);
-			}
-			if (isalpha(atoi(argv[i])) != 0)
+			} else
 			{
 				add = add + atoi(argv[i]);
 			}
