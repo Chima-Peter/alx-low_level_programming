@@ -1,33 +1,51 @@
 #include "main.h"
 
-/*
- * print_times_table - Prints n times table.
- * n: Number of times table to print.
+/**
+ * print_times_table - Prints a multiplication table up to param
+ * @n: The number to be treated
+ *
+ * Return: Number matrix
  */
 void print_times_table(int n)
 {
-	int i, c, mul;
+	int x, y, z;
 
-	if (n > 15)
+	if (n >= 0 && n <= 14)
 	{
-		
-	}
-	else {
-	for (i = 0; i <= n; i++)
-	{
-		for (c = 0; c <= n; c++)
+		for (x = 0; x <= n; x++)
 		{
-			mul = i * c;
-
-			_putchar(mul + '0');
-
-			if (c != n)
+			for (y = 0; y <= n; y++)
 			{
-				_putchar(',');
-				_putchar(' ');
+				z = x * y;
+				if (z > 99)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar((z / 100) + '0');
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else if (z > 9)
+				{
+					_putchar(',');
+					_putchar(32);
+					_putchar(32);
+					_putchar(((z / 10) % 10) + '0');
+					_putchar((z % 10) + '0');
+				}
+				else
+				{
+					if (y != 0)
+					{
+						_putchar(',');
+						_putchar(32);
+						_putchar(32);
+						_putchar(32);
+					}
+					_putchar(z + '0');
+				}
 			}
+			_putchar('\n');
 		}
-		_putchar('\n');
-	}
 	}
 }
