@@ -1,13 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 
-/*
- * main - Sums up natural numbers that are multiples of 3 and 5 from 1 to 1024
- *
- * Return: returns 0.
+/**
+ * main - Prints the sum of all multiples of 3 or 5 up to 1024.
+ * Return: Always (Success).
  */
-
-int main()
+int main(void)
 {
 	int i;
 
@@ -15,11 +13,11 @@ int main()
 
 	for (i = 0; i < 1024; i++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
+		if (i % 3 == 0 || i % 5 == 0)
 		{
 			a = a + i;
 		}
 	}
 	printf("%d\n", a);
-	return(0);
+	return (0);
 }
