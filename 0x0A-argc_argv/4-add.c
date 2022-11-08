@@ -1,11 +1,9 @@
 #include "main.h"
-#include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <stdio.h>
 
 /**
- * main _ Adds positive numbers
+ * main - Adds positive numbers
  *
  * @argc: Argument count
  *
@@ -16,33 +14,30 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, add = 0;
+	int i, k, add = 0;
 
-	int c;
-
-	for (c = argv[argc]; argv[0] == '0'; c--)
-	{
-
-	}
-
-
-	printf("%d\n", c);
-	if (argc == 1)
+	if (argc <= 1)
 	{
 		printf("0\n");
 	}
 	else
 	{
-		for (i = 1; 1 < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
-			if (isdigit(atoi(argv[i])) == 0)
+			k = 0;
+
+			if (atoi(argv[i]) == 0)
 			{
-				printf("Error\n");
-				return (1);
-			} else
+				printf("Error");
+				k++;
+				break;
+			}
+			else
 			{
 				add = add + atoi(argv[i]);
 			}
+			if (k == 1)
+				break;
 		}
 		printf("%d\n", add);
 	}
