@@ -19,26 +19,21 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	else if (str != NULL)
-	{
-		for (n = 0; str[n] != '\0'; n++)
+	for (n = 0; str[n] != '\0'; n++)
 		{
 
 		}
-		dest = malloc(n * sizeof(dest));
-				if (dest == NULL)
-				{
-					return (NULL);
-				}
-				else if (dest != NULL)
-				{
-					for (i = 0; i < n; i++)
-					{
-						dest[i] = str[i];
-					}
-					dest[i] = '\0';
-					return (dest);
-				}
-				free(dest);
+	dest = malloc(n * sizeof(dest));
+
+	if (dest == NULL)
+	{
+		return (NULL);
 	}
+	for (i = 0; i < n; i++)
+	{
+		dest[i] = str[i];
+	}
+	dest[i] = '\0';
+	return (dest);
+	free(dest);
 }

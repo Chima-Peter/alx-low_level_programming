@@ -25,21 +25,19 @@ char *str_concat(char *s1, char *s2)
 	}
 	l = i + k + 1;
 	if (l < 1)
-		return (0);
-	else if (l > 1)
 	{
-		str = malloc(l);
-		if (str != NULL)
-		{
-			for (i = 0; s1[i] != '\0'; i++, n++)
-				str[n] = s1[i];
-			for (k = 0; s2[k] != '\0'; k++, n++)
-				str[n] = s2[k];
-			str[n] = '\0';
-			return (str);
-			free(str);
-		}
-		else if (str == NULL)
-			return (NULL);
+		return (0);
 	}
+	str = malloc(l);
+	
+		if (str == NULL)
+			{
+				return (NULL);
+			}
+	for (i = 0; s1[i] != '\0'; i++, n++)
+		str[n] = s1[i];
+	for (k = 0; s2[k] != '\0'; k++, n++)
+		str[n] = s2[k];
+	str[n] = '\0';
+	return (str);
 }
