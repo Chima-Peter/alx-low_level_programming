@@ -4,13 +4,14 @@
 /**
  * free_grid - Frees the grid
  *
- * @**grid: to be freed
+ * @grid: to be freed
  *
  * @height: Height of array.
  */
 void free_grid(int **grid, int height)
 {
 	int i;
+
 	if (grid != NULL && height != 0)
 	{
 		for (i = 0; i < height; i++)
