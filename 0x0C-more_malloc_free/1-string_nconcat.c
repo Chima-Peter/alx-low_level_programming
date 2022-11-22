@@ -1,62 +1,42 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
- * *string_nconcat - concatenates n number of string
- *
- * @s1: First string
- *
- * @s2: Second string
- *
- * @n: Number of charcters to be concatenated
- *
- * Return: NULL or pointer
+ * string_nconcat - Main Entry
+ * @s1: input
+ * @s2: input
+ * @n: input
+ * Return: 0
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, b, k, x, j = 0;
-	char *dest;
+	unsigned int i, j, k;
+	char *s;
 
-	if (s1 == NULL || s2 == NULL)
-	{
-		return (NULL);
-	}
-
-	for (i = 0; s1[i] != '\0'; i++)
-	{
-
-	}
-	for (b = 0; s2[b] != '\0'; b++)
-	{
-
-	}
-	k = i + b + 1;
-	dest = malloc(sizeof(char) * k);
-	if (dest == NULL)
-	{
-		dest = "";
-		return (dest);
-	}
-	for (i = 0; s1[i] != '\0'; i++, j++)
-	{
-		dest[j] = s1[i];
-	}
-	if (n < b)
-	{
-		for (x = 0; x < n; x++, j++)
-		{
-			dest[j] = s2[x];
-		}
-	}
+	if (s1 == NULL)
+		i = 0;
 	else
 	{
-		for (x = 0; s2[x] != '\0'; x++, j++)
-		{
-			dest[j] = s2[x];
-		}
+		for (i = 0; s1[i]; i++)
+			;
 	}
-	return (dest);
-	free(dest);
+	if (s2 == NULL)
+		j = 0;
+	else
+	{
+		for (j = 0; s2[j]; j++)
+			;
+	}
+	if (j > n)
+		j = n;
+	s = malloc(sizeof(char) * (i + j + 1));
+	if (s == NULL)
+		return (NULL);
+	for (k = 0; k < i; k++)
+		s[k] = s1[k];
+	for (k = 0; k < j; k++)
+		s[k + i] = s2[k];
+	s[i + j] = '\0';
+	return (s);
 }
