@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _realloc- Reallocates the memory
- * ptr: pointer to fmr memory block
- * old_size: Previous memory size
- * new_size: New memory size
+ * _realloc - Reallocates the memory
+ * @ptr: pointer to fmr memory block
+ * @old_size: Previous memory size
+ * @new_size: New memory size
  * Return: Returns void
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
@@ -16,13 +16,22 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size == old_size)
 		return (ptr);
 	else if (ptr == NULL)
-		malloc(new_size);
+	{
+		arr = malloc(new_size);
+		return (arr);
+		free(arr);
+	}
 	else if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
 		return (NULL);
+	}
 	arr = malloc(new_size);
+	if (arr == NULL)
+		return (NULL);
 	if (new_size > old_size)
 		new_size = old_size;
-	for (i = 0; i < old_size; i++)
+	for (i = 0; i < new_size; i++)
 		arr[i] = new[i];
 	arr[i] = '\0';
 	return (arr);
