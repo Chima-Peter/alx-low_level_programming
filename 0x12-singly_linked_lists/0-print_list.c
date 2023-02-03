@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * size_t print_list- Prints all the elements of a singly linked list
+ * print_list - Prints all the elements of a singly linked list
  *
  * @h: The singly linked list
  *
@@ -10,7 +10,8 @@
  */
 size_t print_list(const list_t *h)
 {
-	int count ;
+	int count;
+
 	count = 0;
 
 	while (h != 0)

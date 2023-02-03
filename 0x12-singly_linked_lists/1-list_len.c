@@ -2,7 +2,7 @@
 #include "lists.h"
 
 /**
- * size_t list_len- Counts all the elements in a singly linked list
+ * list_len- Counts all the elements in a singly linked list
  *
  * @h: The singly linked list
  *
@@ -10,7 +10,8 @@
  */
 size_t list_len(const list_t *h)
 {
-	int count ;
+	int count;
+
 	count = 0;
 
 	while (h != 0)
