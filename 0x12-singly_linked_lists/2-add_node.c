@@ -24,7 +24,7 @@ list_t *add_node(list_t **head, char *str)
 	(*head) = new_node;
 
 	if (*head != 0)
-		return (new_node);
+		return (*head);
 	else
 		return (NULL);
 	return (0);
