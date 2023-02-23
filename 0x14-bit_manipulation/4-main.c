@@ -17,7 +17,7 @@ int main(void)
     clear_bit(&n, 10);
     printf("%lu\n", n);
     n = 22;
-    clear_bit(&n, 3);
+    clear_bit(&n, 2);
     printf("%lu\n", n);
     return (0);
 }
