@@ -12,7 +12,7 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new, *head, *prev;
+	dlistint_t *new, *head;
 
 	unsigned int match, count;
 
@@ -24,6 +24,18 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (new == NULL)
 		return (NULL);
 
+	new->n = n;
+	new->next = NULL;
+	new->prev = NULL;
+
+	if (*h == NULL && idx == 0)
+	{
+		*h = new;
+		return (*h);
+	}
+	if (head == NULL && idx != 0)
+		return (NULL);
+
 	head = *h;
 
 	while (head)
@@ -31,14 +43,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		head = head->next;
 		count++;
 	}
-	if (head == NULL && idx == 0)
-	{
-		add_dnodeint(&head, idx);
-		*h = head;
-		return (*h);
-	}
-	if (head == NULL && idx != 0)
-		return (NULL);
 	if (head != NULL && idx == count)
 	{
 		add_dnodeint_end(&head, idx);
@@ -46,23 +50,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (*h);
 	}
 
-	new->n = n;
-
-	while (head->next)
+	while (head && match < idx - 1)
 	{
-		if (match == (idx - 1))
-		{
-			new->next = (*h)->next;
-			(*h)->next = new;
-			prev = (*h)->next;
-		}
-		if (match == idx)
-		{
-			new->prev = (*h)->prev;
-			(*h)->prev = prev;
-		}
 		head = head->next;
 		match++;
 	}
-	return (*h);
+	new->next = head->next;
+	new->prev = head;
+	head->next->prev = new;
+	head->next = new;
+	*h = head;
+
+	return (head);
 }
