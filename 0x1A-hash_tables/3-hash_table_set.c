@@ -13,7 +13,10 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *node, *table;
-	unsigned long int index, sign;
+	unsigned long int index;
+
+	if (ht == NULL)
+		return (0);
 
 	node = create_item(key, value);
 
@@ -31,17 +34,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = node;
 		return (1);
 	}
-	if (table->key == key)
-	{
-		strcpy(table->key, key);
-		return (1);
-	}
-	sign = handle_collision(&table, node);
-
-	if (sign == 1)
-		return (1);
-	else
-		return (0);
+	handle_collision(&table, node);
+	return (1);
 }
 
 /**
@@ -53,13 +47,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  *
  * Return: either 1 or 0 depending on success or failure
  */
-int handle_collision(hash_node_t **head, hash_node_t *node)
+hash_node_t *handle_collision(hash_node_t **head, hash_node_t *node)
 {
 	node->next = (*head);
 	(*head) = node;
 
-	if ((*head)->next == NULL)
-		return (0);
-	else
-		return (1);
+	return (*head);
 }
