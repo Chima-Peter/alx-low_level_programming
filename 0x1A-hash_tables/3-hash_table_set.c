@@ -31,9 +31,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = node;
 		return (1);
 	}
-	else if (table->key == key)
+	if (table->key == key)
 	{
-		table = node;
+		strcpy(table->key, key);
 		return (1);
 	}
 	sign = handle_collision(&table, node);
@@ -55,10 +55,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 int handle_collision(hash_node_t **head, hash_node_t *node)
 {
-	hash_node_t *temp;
-
 	node->next = (*head);
-	(*head)->next = node;
+	(*head) = node;
 
 	if ((*head)->next == NULL)
 		return (0);
