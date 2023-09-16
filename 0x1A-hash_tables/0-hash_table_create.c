@@ -46,15 +46,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	node->key = malloc(sizeof(key) + 1);
-	if (node->key == NULL)
-		return (0);
-	node->value = malloc(sizeof(value) + 1);
-	if (node->value == NULL)
-		return (0);
-
-	strcpy(node->key, key);
-	strcpy(node->value, value);
+	node->key = strdup(key);
+	node->value = strdup(value);
 	node->next = NULL;
 
 	return (node);

@@ -49,7 +49,7 @@ int main(void)
 	printf("%d\n", ret);
 	ret = hash_table_set(ht, "Germany", "Berlin");
 	printf("%d\n", ret);
-	ret = hash_table_set(ht, "China", "Beijing");
+	ret = hash_table_set(ht, "mentioner", "Beijing");
 	printf("%d\n", ret);
 	ret = hash_table_set(ht, "Russia", "Moscow");
 	printf("%d\n", ret);
@@ -61,11 +61,11 @@ int main(void)
 	printf("%d\n", ret);
 	ret = hash_table_set(ht, "Sweden", "Stockholm");
 	printf("%d\n", ret);
-	ret = hash_table_set(ht, "Iceland", "Reykjavik");
+	ret = hash_table_set(ht, "vivency", "Reykjavik");
 	printf("%d\n", ret);
-	ret = hash_table_set(ht, "Japan", "Tokyo");
+	ret = hash_table_set(ht, "dram", "Tokyo");
 	printf("%d\n", ret);
-	ret = hash_table_set(ht, "Australia", "Canberra");
+	ret = hash_table_set(ht, "hetairas", "Canberra");
 	printf("%d\n", ret);
 	_hash_table_print(ht);
 	return (EXIT_SUCCESS);
