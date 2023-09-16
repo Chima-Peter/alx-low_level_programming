@@ -33,6 +33,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[index] = node;
 		return (1);
 	}
+	if (!strcmp(ht->array[index]->key, node->key))
+	{
+		ht->array[index] = node;
+		return (1);
+	}
 	node->next = ht->array[index];
 	ht->array[index] = node;
 	return (1);
