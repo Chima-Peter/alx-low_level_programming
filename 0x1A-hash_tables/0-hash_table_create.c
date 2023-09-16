@@ -28,3 +28,28 @@ hash_table_t *hash_table_create(unsigned long int size)
 		table->array[i] = NULL;
 	return (table);
 }
+
+
+/**
+ * create_item - Creates a hash node
+ *
+ * key: the key to be converted
+ *
+ * value: the value to be stored with the key
+ *
+ *Return: the created hash node
+ */
+ hash_node_t *create_item(const char* key, const char* value)
+{
+	hash_node_t *node;
+
+	node = malloc(sizeof(hash_node_t));
+	node->key = malloc(sizeof(key) + 1);
+	node->value = malloc(sizeof(value) + 1);
+
+	strcpy(node->key, key);
+	strcpy(node->value, value);
+	node->next = NULL;
+
+	return (node);
+}
