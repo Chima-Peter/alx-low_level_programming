@@ -7,7 +7,7 @@
  *
  * @key: the key to retrive value for
  *
- * Return: either the value or null
+ * Return: either the value or nulunsigned long int i;
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
