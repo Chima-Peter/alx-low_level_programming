@@ -12,8 +12,8 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *node;
-	unsigned long int index;
+	hash_node_t *node, *table;
+	unsigned long int index, sign;
 
 	node = create_item(key, value);
 
@@ -24,10 +24,47 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((unsigned char *) key, ht->size);
+	table = ht->array[index];
 
 	if (ht->array[index] == NULL)
 	{
 		ht->array[index] = node;
+		return (1);
 	}
-	return (1);
+	else if (table->key == key)
+	{
+		table = node;
+		return (1);
+	}
+	sign = handle_collision(&table, node);
+
+	if (sign == 1)
+		return (1);
+	else
+		return (0);
+}
+
+/**
+ * handle_collision - Handles the collision of keys
+ *
+ * @head: the head node
+ *
+ * @node: the node to be added
+ *
+ * Return: either 1 or 0 depending on success or failure
+ */
+int handle_collision(hash_node_t **head, hash_node_t *node)
+{
+	node->next = (*head);
+	(*head)->next = node;
+
+	while ((*head)->next != NULL)
+	{
+		printf("%s", (*head)->value);
+	}
+
+	if ((*head)->next == NULL)
+		return (0);
+	else
+		return (1);
 }
