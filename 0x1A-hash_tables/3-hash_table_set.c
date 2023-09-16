@@ -55,13 +55,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 int handle_collision(hash_node_t **head, hash_node_t *node)
 {
+	hash_node_t *temp;
+
 	node->next = (*head);
 	(*head)->next = node;
-
-	while ((*head)->next != NULL)
-	{
-		printf("%s", (*head)->value);
-	}
 
 	if ((*head)->next == NULL)
 		return (0);
